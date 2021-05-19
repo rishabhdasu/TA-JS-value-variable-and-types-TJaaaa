@@ -14,17 +14,18 @@ const ACCESSORY_PRICE = 9.99;
 var bank_balance = 303.91;
 var amount = 0;
 // your code goes here
-for(let i = 0; i <= bank_balance; i++){
-    amount = PHONE_PRICE + i;
+while(amount < bank_balance){
+    amount += PHONE_PRICE;
+    if(amount < SPENDING_THRESHOLD){
+        amount += ACCESSORY_PRICE;
+    }
 }
-while(PHONE_PRICE < SPENDING_THRESHOLD){
-    amount = PHONE_PRICE + ACCESSORY_PRICE;
-    PHONE_PRICE++
-}
-amount = amount + TAX_RATE;
-if(amount <= bank_balance){
-    console.log(amount);
+let tax = amount * TAX_RATE;
+let totalTax = amount + tax;
+console.log(`$${totalTax}`);
+if(totalTax < bank_balance){
+    console.log(`Affordable`);
 }else {
-    console.log(false);
+    console.log(`Not affordable`);
 }
 // ⛑ Answer of the above will `$334.76`.
