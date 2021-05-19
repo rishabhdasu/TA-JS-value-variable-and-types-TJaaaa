@@ -9,7 +9,7 @@ let user = prompt(`Enter your username`);
 alert(`Your username is ${user}`);
 let userName = user;
 console.log(`Username ${user} has been updated to ${userName}`);
-let userInfo = {age: 22, isLearning: true};
+let age = 22, isLearning = true;
 user = "John";
 console.log(`Updated name is ${user} and ${userName}`);
 /* 2.
@@ -40,24 +40,29 @@ for (let i = 9; i <= 1; i++){
 
 // 5. Concat all the numbers from 5 to 0 (both inclusive) in descending order using a while loop. (543210)
 
+let finalValue = "";
 let initialValue = 5;
-while(initialValue >= 0){
-    let middleValue = "" + initialValue;
-    initialValue--;
-    let finalValue = middleValue + initialValue;
-    console.log(finalValue);
-}
 
+while(initialValue >= 0){
+    finalValue += initialValue;
+    initialValue--;
+}
+console.log(finalValue);
 
 // 6. Concat all the even numbers from 10 to 0 (both inclusive) in descending order using a while loop. (1086420)
 
+let finalEvenValue = "";
 let initialEvenValue = 10;
-while(initialValue >= 0 || initialEvenValue % 2 == 0 ){
-    let middleEvenValue = "" + initialEvenValue;
-    initialValue--;
-    let finalEvenValue = middleEvenValue + initialEvenValue;
-    console.log(finalEvenValue);
+
+while(initialEvenValue >= 0){
+    if(initialEvenValue % 2 == 0){
+        finalEvenValue += initialEvenValue;
+    }
+    initialEvenValue--;
 }
+console.log(finalEvenValue);
+
+
 // Comparisoin
 
 /* 7. Take two value using prompt and store them in variables `num1` and `num2`. Check whether they are equal or not.
@@ -75,10 +80,8 @@ Example:
 
 let num1 = Number(prompt(`Enter a number`));
 let num2 = Number(prompt(`Enter another number`));
-if(num1 == num2){
- alert(true);
-}else if(num1 || num2 == true && null && undefined){
-    alert(`Enter a valid value`);
+if(isNaN(num1) || isNaN(num2)){
+    alert(`Enter a valid input`);
 }else {
-    alert(false);
+    alert(num1 == num2);
 }
