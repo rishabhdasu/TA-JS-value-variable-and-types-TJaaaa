@@ -30,12 +30,12 @@ n = 7 => output: heeeeeeello
 👇
 */
 // [Your code goes here]
-let hello = +prompt(`Enter the value of n`);
-let letter = "e";
-for(let i = 0; i <= hello; i++){
-  letter += i;
+let count = +prompt(`Enter the value of n`);
+let letter = "";
+for(let i = 0; i < count; i++){
+  letter += "e";
 }
-alert(`h${letter}llo`);
+alert(`h` + letter + 'llo');
 
 /*
 Program to calculate the sum of first n natural numbers(1,2,3...n are known as natural numbers). Prompt user to enter n (using `prompt`) then based on input provided calculate and show result in `alert`.
